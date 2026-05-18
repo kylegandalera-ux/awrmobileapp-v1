@@ -1,0 +1,10 @@
+{
+  "name": "awr-891-mobile-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "echo Static app ready"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

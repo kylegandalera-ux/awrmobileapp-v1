@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#b3261e">
+    <title>Adventist World Radio 89.1 FM</title>
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="phone-shell" aria-label="Adventist World Radio 89.1 FM mobile app">
+      <section class="app-screen">
+        <header class="hero">
+          <img src="assets/radio-hero.png" alt="" class="hero-image">
+          <div class="hero-shade"></div>
+          <div class="status-bar" aria-hidden="true">
+            <span>10:30</span>
+            <span class="status-icons">5G 100%</span>
+          </div>
+          <div class="hero-content">
+            <div class="station-mark">89.1</div>
+            <div>
+              <p class="eyebrow">Adventist World Radio</p>
+              <h1>89.1 FM</h1>
+              <p class="subline">Hope, worship, Bible study, and live radio in one app.</p>
+            </div>
+          </div>
+          <div class="player-card">
+            <div>
+              <p class="label">Now selected</p>
+              <h2 id="nowTitle">AWR 89.1 FM Live</h2>
+            </div>
+            <button class="round-button primary" id="playButton" type="button" aria-label="Play selected station">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>
+            </button>
+          </div>
+        </header>
+
+        <section class="content" data-view="home">
+          <div class="section-head">
+            <h2>Radio Stations</h2>
+            <button class="text-button" id="editLinksButton" type="button">Edit links</button>
+          </div>
+          <div class="station-list" id="stationList"></div>
+
+          <div class="feature-grid">
+            <button class="feature-tile" data-tab-target="bible" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5z"></path></svg>
+              <span>Audio Bible</span>
+            </button>
+            <button class="feature-tile" data-tab-target="donate" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"></path></svg>
+              <span>Donate</span>
+            </button>
+            <button class="feature-tile" data-tab-target="more" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a4 4 0 0 1-4 4H7l-4 4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"></path></svg>
+              <span>Prayer</span>
+            </button>
+            <button class="feature-tile" data-tab-target="more" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v12H5.2L4 17.2V4z"></path><path d="M8 20h8"></path><path d="M12 16v4"></path></svg>
+              <span>Programs</span>
+            </button>
+          </div>
+        </section>
+
+        <section class="content hidden" data-view="bible">
+          <div class="section-head">
+            <h2>Audio Bible</h2>
+            <span class="pill">Playlist ready</span>
+          </div>
+          <div class="bible-card">
+            <p class="label">Daily listening</p>
+            <h3 id="bibleTitle">John Chapter 3</h3>
+            <p>Connect audio Bible chapters, devotional readings, or YouTube playlists.</p>
+            <div class="progress"><span></span></div>
+            <button class="wide-button" id="biblePlayButton" type="button">Open Bible Audio</button>
+          </div>
+          <div class="compact-list" id="bibleList"></div>
+        </section>
+
+        <section class="content hidden" data-view="donate">
+          <div class="donate-panel">
+            <p class="eyebrow">Support the ministry</p>
+            <h2>Keep hope on the air.</h2>
+            <p>Your donation link can point to your church giving page, PayPal, bank form, or official AWR donation page.</p>
+            <div class="amount-grid" id="amountGrid"></div>
+            <button class="wide-button donate" id="donateButton" type="button">Donate Now</button>
+          </div>
+          <div class="info-row">
+            <span>Donation URL</span>
+            <strong id="donationUrlLabel">Not configured</strong>
+          </div>
+        </section>
+
+        <section class="content hidden" data-view="more">
+          <div class="section-head">
+            <h2>Ministry Hub</h2>
+            <span class="pill">More</span>
+          </div>
+          <div class="compact-list" id="moreList"></div>
+        </section>
+
+        <nav class="tab-bar" aria-label="Main navigation">
+          <button class="tab active" data-tab="home" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-8 9 8"></path><path d="M5 10v10h14V10"></path></svg>
+            <span>Home</span>
+          </button>
+          <button class="tab" data-tab="bible" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5z"></path></svg>
+            <span>Bible</span>
+          </button>
+          <button class="tab" data-tab="donate" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.2-9A5.4 5.4 0 0 1 12 5a5.4 5.4 0 0 1 9.2 7C19 16.4 12 21 12 21z"></path></svg>
+            <span>Donate</span>
+          </button>
+          <button class="tab" data-tab="more" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v.01"></path><path d="M12 12v.01"></path><path d="M12 19v.01"></path></svg>
+            <span>More</span>
+          </button>
+        </nav>
+      </section>
+    </main>
+
+    <dialog class="link-dialog" id="linkDialog">
+      <form method="dialog">
+        <div class="section-head">
+          <h2>Update Links</h2>
+          <button class="icon-button" value="close" aria-label="Close dialog">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+          </button>
+        </div>
+        <label>
+          Station YouTube URL
+          <input id="stationUrlInput" type="url" placeholder="https://www.youtube.com/watch?v=...">
+        </label>
+        <label>
+          Donation URL
+          <input id="donationUrlInput" type="url" placeholder="https://...">
+        </label>
+        <button class="wide-button" id="saveLinksButton" value="default" type="button">Save Demo Links</button>
+      </form>
+    </dialog>
+
+    <script src="app.js"></script>
+  </body>
+</html>
